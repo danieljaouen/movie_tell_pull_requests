@@ -1,0 +1,12 @@
+<h1>Search</h1>
+<%= form_tag movies_search_path, method: :get do %>
+    <%= text_field_tag 'title' %>
+    <%= submit_tag 'Submit' %>
+<% end %>
+
+<h1>Movies</h1>
+<ul>
+    <% @movie_dicts.each do |movie_dict| %>
+        <li><%= link_to movie_dict[:title], movie_path(movie_dict[:id]) %></li>
+    <% end %>
+</ul>
